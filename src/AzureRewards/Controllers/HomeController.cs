@@ -24,16 +24,6 @@ namespace AzureRewards.Controllers
         }
         public IActionResult Step3()
         {
-			
-            if (CurrentSite.HostedInAzure()) {
-                if (CurrentSite.WebsiteName != "azurehomework")
-                {
-                    return View("Step3Form", new Models.RewardApplication(CurrentSite.WebsiteName));
-                }
-                else {
-                    return View("Step3Information");
-                }
-            }
             return View();
         }
 
