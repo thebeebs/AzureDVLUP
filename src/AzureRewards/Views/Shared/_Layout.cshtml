@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+
+	<link rel="stylesheet" href="~/css/header.css" />
+	<link rel="stylesheet" href="~/css/site.css" />
+
+</head>
+<body>
+	<header>
+			<nav class="navbar">
+				<ul class="nav ">
+					<li>
+						<a href="/">Home</a>
+					</li>
+					<li>
+						<a href="https://www.dvlup.com/Challenge/a3a08d80-6567-4c99-ab9c-b46446701f70">DVLUP Challenge</a>
+					</li>					
+				</ul>				
+			</nav>
+	</header>
+    <div id="containerMA">
+        <a href="@Url.Action("Index","Home")">
+            <div id="header">
+            </div>
+        </a>
+
+        @RenderBody()
+
+ <div id="footer">
+            <p>
+                © 2015 Microsoft
+            </p>
+            <ul>
+                <a href="http://www.microsoft.com/About/Legal/EN/US/IntellectualProperty/Trademarks/EN-US.aspx" target="_blank">
+                    <li>Registered Trademark</li>
+                </a>
+                <a href="http://www.microsoft.com/en-us/legal/intellectualproperty/copyright/default.aspx" target="_blank">
+                    <li>Copyright</li>
+                </a>
+                <a href="http://www.microsoft.com/privacystatement/en-gb/core/default.aspx" target="_blank">
+                    <li>Privacy</li>
+                </a>
+                <a href="http://support.microsoft.com/contactus/?ln=en-ar" target="_blank">
+                    <li>Contact</li>
+                </a>
+            </ul>
+        </div>
+
+
+    </div>
+
+
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
