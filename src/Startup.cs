@@ -2,6 +2,7 @@
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Http;
 using Microsoft.Framework.DependencyInjection;
+using Microsoft.AspNet.Hosting;
 
 namespace Azure_DVLUP
 {
@@ -12,8 +13,14 @@ namespace Azure_DVLUP
 			services.AddMvc();
 		}
 
-		public void Configure(IApplicationBuilder app)
+		public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 		{
+			// Add the following to the request pipeline only in development environment.
+			if (string.Equals(env.EnvironmentName, "Development", StringComparison.OrdinalIgnoreCase))
+			{
+				app.UseBrowserLink();
+			}
+
 			app.UseMvc(routes =>
 			{
 				routes.MapRoute(
